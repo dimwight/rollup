@@ -3,7 +3,7 @@
     "noImplicitAny": true,
     "sourceMap": true,
     "allowUnreachableCode": true,
-    "target": "es5",
+    "target": "es2016",
     "moduleResolution": "node",
     "module": "commonjs"
   }

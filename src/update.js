@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var date_fns_1 = require("date-fns");
-var span = document.querySelector('#time-now');
+const date_fns_1 = require("date-fns");
+let span = document.querySelector('#time-now');
 function update() {
-    span.textContent = 'Time ' + date_fns_1.format(new Date(), 'h:mm:ssa');
+    span.textContent = true ? 'Time is exactly ' + date_fns_1.format(new Date(), 'h:mm:ssa')
+        : 'Time is about ' + date_fns_1.format(new Date(), 'h:mm');
     setTimeout(update, 1000);
 }
 exports.default = update;

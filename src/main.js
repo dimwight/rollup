@@ -14,6 +14,6 @@ function announceTime() {
         setTimeout(announceTime, 1000);
     }
 }
-announceTime();
 consoleError_1.default();
+announceTime();
 //# sourceMappingURL=main.js.map

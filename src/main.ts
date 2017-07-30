@@ -13,5 +13,5 @@ function announceTime(){
   }
 }
 
-announceTime();
 errorTest();
+announceTime();

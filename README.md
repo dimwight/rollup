@@ -4,4 +4,4 @@
 - TS supported inc sourcemaps
 - Debug frames with moduleResolution:node, 
 module:commonjs
-- React next?
+- Headless with Node?

@@ -2,3 +2,7 @@
 node_modules
 .idea/workspace.xml
 public/bundle*
+src/*.js.*
+.idea/dictionaries/
+.idea/inspectionProfiles/profiles_settings.xml
+npm-debug.log

@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "allowUnreachableCode": true,
+    "target": "es5",
+    "moduleResolution": "node",
+    "module": "es6"
+  }
+}

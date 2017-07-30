@@ -5,7 +5,8 @@ import sourcemaps from 'rollup-plugin-sourcemaps';
 export default {
   entry: 'src/main.js',
   dest: 'public/rollup.js',
-  format: 'cjs',
+  format: 'iife',
+  moduleName: 'foo',
   sourceMap: true,
   plugins: [
     resolve(),

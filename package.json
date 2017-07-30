@@ -5,7 +5,7 @@
     "rollup": "^0.43.0",
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-uglify": "^2.0.1",
+    "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-watch": "^4.0.0"
   },
   "dependencies": {

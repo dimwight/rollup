@@ -9,10 +9,11 @@ function announceTime() {
     if (typeof document === 'undefined')
         console.log(text);
     else {
+        document.getElementById('pageTitle').innerText = document.title;
         document.querySelector('#time-now').textContent = text;
         setTimeout(announceTime, 1000);
     }
 }
-consoleError_1.default();
 announceTime();
+consoleError_1.default();
 //# sourceMappingURL=main.js.map

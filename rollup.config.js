@@ -11,6 +11,6 @@ export default {
   plugins: [
     resolve(),
     commonjs(),
-    sourcemaps()//For debug frames
+    sourcemaps()
   ]
 };

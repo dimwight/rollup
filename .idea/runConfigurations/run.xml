@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="run" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" node-parameters="public/rollup.js" working-dir="$PROJECT_DIR$">
+    <method />
+  </configuration>
+</component>

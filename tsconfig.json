@@ -4,9 +4,10 @@
     "allowUnreachableCode": true,
     "removeComments": false,
     "preserveConstEnums": true,
+    "alwaysStrict": true,
     "sourceMap": true,
     "moduleResolution": "node",
-    "target": "esnext",
+    "target": "es3",
     "module": "es2015"
   }
 }

@@ -1,4 +1,8 @@
-import {format} from 'date-fns';
+//format: es
+//target: es3
+//module: es2015
+// import {format} from 'date-fns';
+import format from './date-fns';
 import errorTest from './consoleError';
 
 function announceTime(){
@@ -13,5 +17,5 @@ function announceTime(){
   }
 }
 
-announceTime();
 errorTest();
+announceTime();

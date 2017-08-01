@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     "noImplicitAny": true,
+    "allowUnreachableCode": true,
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": true,
-    "allowUnreachableCode": true,
-    "target": "es2016",
     "moduleResolution": "node",
-    "module": "commonjs"
+    "target": "esnext",
+    "module": "es2015"
   }
 }

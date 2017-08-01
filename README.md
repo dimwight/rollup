@@ -4,4 +4,4 @@
 - TS supported inc sourcemaps
 - Debug frames
 - Headless with Node
-- Refined target/module, format
+- Refined target/module/format

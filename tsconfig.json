@@ -7,7 +7,7 @@
     "alwaysStrict": true,
     "sourceMap": true,
     "moduleResolution": "node",
-    "target": "es3",
+    "target": "esnext",
     "module": "es2015"
   }
 }

@@ -1,4 +1,5 @@
 import format from './myFormat';
+import errorTest from './consoleError';
 function announceTime() {
     const time = new Date();
     const text = true ? 'Time is exactly ' + format(time, 'h:mm:ssa')
@@ -11,9 +12,10 @@ function announceTime() {
         setTimeout(announceTime, 1000);
     }
 }
-// errorTest();
+errorTest();
 announceTime();
 //target: esnext
 //module: es2015
 //format: es
+//external: false 
 //# sourceMappingURL=main.js.map

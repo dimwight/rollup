@@ -2,7 +2,20 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 
-const namedExports = {
+const external = true;
+
+export default external ? {
+  external: ['date-fns'],
+  entry: 'src/main.js',
+  dest: 'public/rollup.js',
+  format: 'iife',
+  sourceMap: true,
+  plugins: [
+    resolve(),
+    commonjs(),
+    sourcemaps()
+  ]
+} : {
   entry: 'src/main.js',
   dest: 'public/rollup.js',
   format: 'iife',
@@ -16,17 +29,4 @@ const namedExports = {
     }),
     sourcemaps()
   ]
-},
-external = {
-  entry: 'src/main.js',
-  dest: 'public/rollup.js',
-  format: 'iife',
-  sourceMap: true,
-  external: ['date-fns'],
-  plugins: [
-    resolve(),
-    commonjs(),
-    sourcemaps()
-  ]
 };
-export default true ? external : namedExports;

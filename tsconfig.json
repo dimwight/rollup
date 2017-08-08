@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
     "allowUnreachableCode": true,
     "removeComments": false,
@@ -7,7 +8,7 @@
     "alwaysStrict": true,
     "sourceMap": true,
     "moduleResolution": "node",
-    "target": "esnext",
-    "module": "es2015"
+    "target": "es3",
+    "module": "none"
   }
 }

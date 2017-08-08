@@ -17,6 +17,6 @@ errorTest();
 announceTime();
 
 //target: esnext
-//module: es2015
+//module: commonjs
 //external: true
-//format: es
+//format: iife

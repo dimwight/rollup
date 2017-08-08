@@ -16,6 +16,6 @@ errorTest();
 announceTime();
 //target: esnext
 //module: es2015
-//format: es
-//external: false 
+//format: iife
+//external: true 
 //# sourceMappingURL=main.js.map

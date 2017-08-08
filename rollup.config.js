@@ -5,7 +5,7 @@ import sourcemaps from 'rollup-plugin-sourcemaps';
 const namedExports = {
   entry: 'src/main.js',
   dest: 'public/rollup.js',
-  format: 'es',
+  format: 'iife',
   sourceMap: true,
   plugins: [
     resolve(),
@@ -20,7 +20,7 @@ const namedExports = {
 external = {
   entry: 'src/main.js',
   dest: 'public/rollup.js',
-  format: 'es',
+  format: 'iife',
   sourceMap: true,
   external: ['date-fns'],
   plugins: [
@@ -29,4 +29,4 @@ external = {
     sourcemaps()
   ]
 };
-export default false ? external : namedExports;
+export default true ? external : namedExports;

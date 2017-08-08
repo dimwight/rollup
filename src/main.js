@@ -1,9 +1,11 @@
-import format from './myFormat';
-import errorTest from './consoleError';
+"use strict";
+exports.__esModule = true;
+var myFormat_1 = require("./myFormat");
+var consoleError_1 = require("./consoleError");
 function announceTime() {
-    const time = new Date();
-    const text = true ? 'Time is exactly ' + format(time, 'h:mm:ssa')
-        : 'Time is about ' + format(time, 'h:mm');
+    var time = new Date();
+    var text = true ? 'Time is exactly ' + myFormat_1["default"](time, 'h:mm:ssa')
+        : 'Time is about ' + myFormat_1["default"](time, 'h:mm');
     if (typeof document === 'undefined')
         console.log(text);
     else {
@@ -12,10 +14,10 @@ function announceTime() {
         setTimeout(announceTime, 1000);
     }
 }
-errorTest();
+consoleError_1["default"]();
 announceTime();
 //target: esnext
-//module: es2015
+//module: commonjs
+//external: true
 //format: iife
-//external: true 
 //# sourceMappingURL=main.js.map

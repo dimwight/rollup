@@ -17,7 +17,7 @@ export default external ? {
   sourceMap: true,
   plugins: [
     resolve(),
-    commonjs(),
+    // commonjs(),
     sourcemaps()
   ]
 } : {

@@ -9,6 +9,6 @@
     "sourceMap": true,
     "moduleResolution": "node",
     "target": "es3",
-    "module": "none"
+    "module": "umd"
   }
 }

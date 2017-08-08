@@ -18,5 +18,5 @@ announceTime();
 
 //target: esnext
 //module: es2015
-//format: iife
 //external: true
+//format: es

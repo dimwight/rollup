@@ -5,10 +5,10 @@ import sourcemaps from 'rollup-plugin-sourcemaps';
 const external = true;
 
 export default external ? {
-  external: ['date-fns'],
+  external: ['./src/myFormat.js'],
   entry: 'src/main.js',
   dest: 'public/rollup.js',
-  format: 'iife',
+  format: 'es',
   sourceMap: true,
   plugins: [
     resolve(),

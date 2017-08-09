@@ -1199,4 +1199,3 @@ function addLeadingZeros (number, targetLength) {
 var index = format;
 
 export default index;
-//# sourceMappingURL=formatTs.js.map

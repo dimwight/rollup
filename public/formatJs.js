@@ -1204,4 +1204,3 @@ var index = format;
 return index;
 
 }());
-//# sourceMappingURL=formatJs.js.map

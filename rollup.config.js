@@ -3,10 +3,21 @@ import commonjs from 'rollup-plugin-commonjs';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 import path from 'path';
 
-const formatPath=path.resolve('public/formatTs.js')
-console.log(formatPath);
+const datePath=path.resolve('public/dateTs.js')
+console.log(datePath);
 
-const internal={
+const date={
+  entry: 'node_modules/date-fns/format/index.js',
+  dest: 'public/dateTs.js',
+  format: 'es',
+  moduleName:'date',
+  plugins: [
+    resolve(),
+    commonjs(),
+    sourcemaps()
+  ]
+},
+internal={
   entry: 'src/main.js',
   dest: 'public/rollup.js',
   format: 'iife',
@@ -17,28 +28,16 @@ const internal={
     sourcemaps()
   ]
 },
-format={
-  entry: 'node_modules/date-fns/format/index.js',
-  dest: 'public/formatTs.js',
-  format: 'es',
-  moduleName:'format',
-  plugins: [
-    resolve(),
-    commonjs(),
-    sourcemaps()
-  ]
-},
+
 external={
   entry: 'src/main.js',
   dest: 'public/rollup.js',
   format: 'iife',
   sourceMap: true,
-  external: [
-    formatPath
-  ],
-  globals: {
-    formatPath: 'format',
-  },
+  external: [datePath],
+  // globals: {
+  //   datePath: 'date',
+  // },
   plugins: [
     resolve(),
     commonjs(),
@@ -47,8 +46,8 @@ external={
 };
 
 if(true){
-  format.format='iife';
-  format.dest='public/formatJs.js';
+  date.format='iife';
+  date.dest='public/dateJs.js';
 }
 const bundle = external;
 console.log('Bundling to '+bundle.dest)

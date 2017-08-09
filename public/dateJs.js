@@ -1,4 +1,4 @@
-var format = (function () {
+var date = (function () {
 'use strict';
 
 /**

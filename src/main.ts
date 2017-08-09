@@ -1,4 +1,4 @@
-import myFormat from './myFormat';
+import myFormat from './myDate';
 import errorTest from './consoleError';
 
 function announceTime(){

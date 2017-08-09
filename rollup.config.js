@@ -4,7 +4,7 @@ import sourcemaps from 'rollup-plugin-sourcemaps';
 import path from 'path';
 
 const datePath=path.resolve('public/dateTs.js')
-console.log(datePath);
+console.log('datePath='+datePath);
 
 const date={
   entry: 'node_modules/date-fns/format/index.js',

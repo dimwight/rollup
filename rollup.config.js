@@ -12,7 +12,7 @@ export default external ? {
   // external: ['./src/myFormat.js'],
   external: ['date-fns/format'],
   globals: {
-    'date-fns/format': 'format',
+    // 'date-fns/format': 'formatMe',
   },
   plugins: [
     resolve(),

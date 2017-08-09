@@ -1,6 +1,7 @@
 //external: false
 import myFormat from './myFormat';
 import errorTest from './consoleError';
+
 function announceTime(){
   const time=new Date();
   const text=true?'Time is exactly '+myFormat(time,'h:mm:ssa')
@@ -9,7 +10,7 @@ function announceTime(){
   else{
     document.getElementById('pageTitle').innerText=document.title;
     document.querySelector('#time-now').textContent=text;
-    setTimeout(announceTime,1000);
+    if(false)setTimeout(announceTime,1000);
   }
 }
 

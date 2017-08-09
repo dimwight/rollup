@@ -9,9 +9,9 @@ const plugins= [
   sourcemaps()
 ];
 
-const datePath=path.resolve('public/dateTs.js');
+const dateTsPath=path.resolve('public/dateTs.js');
 
-console.log('datePath='+datePath);
+console.log('datePath='+dateTsPath);
 
 const date={
   entry: 'node_modules/date-fns/format/index.js',
@@ -20,7 +20,7 @@ const date={
   moduleName:'date',
   plugins: plugins
 },
-internal={
+node={
   entry: 'src/main.js',
   dest: 'public/rollup.js',
   format: 'iife',
@@ -28,12 +28,12 @@ internal={
   plugins: plugins
 },
 
-external={
+browser={
   entry: 'src/main.js',
   dest: 'public/rollup.js',
   format: 'iife',
   sourceMap: true,
-  external: [datePath],//What makes it work.
+  external: [dateTsPath],//What makes it work.
   globals: {
     datePath: 'date', //Makes no odds either way
   },
@@ -44,6 +44,6 @@ if(true){
   date.format='iife';
   date.dest='public/dateJs.js';
 }
-const bundle = external;
+const bundle = browser;
 console.log('Bundling to '+bundle.dest);
 export default bundle;

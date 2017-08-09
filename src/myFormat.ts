@@ -1,7 +1,6 @@
-//external: false
-import format from 'date-fns/format';
+import format from '../public/formatTs';
 export default function (time:Date,style:string){
-  return format(time,style);
+  return format(time,style,null);
   return 'late afternoon';
 
 }

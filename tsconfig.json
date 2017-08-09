@@ -5,6 +5,7 @@
     "alwaysStrict": true,
     "sourceMap": true,
     "module": "es6",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "allowJs": true
   }
 }

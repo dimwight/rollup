@@ -1,4 +1,3 @@
-//external: false
 import myFormat from './myFormat';
 import errorTest from './consoleError';
 function announceTime() {
@@ -10,8 +9,7 @@ function announceTime() {
     else {
         document.getElementById('pageTitle').innerText = document.title;
         document.querySelector('#time-now').textContent = text;
-        if (false)
-            setTimeout(announceTime, 1000);
+        setTimeout(announceTime, 1000);
     }
 }
 errorTest();

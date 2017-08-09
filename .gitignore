@@ -4,4 +4,3 @@ public/rollup*
 /src/*.js
 /src/*.js.map
 npm-debug.log
-/src/main.js

@@ -1,13 +1,6 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import sourcemaps from 'rollup-plugin-sourcemaps';
-import path from 'path';
-
-const importIsGlobal=true;
-const dateTsPath=path.resolve('public/dateTs.js'),
-  dateGlobal='date-fns/format',
-  forExternal = importIsGlobal ? dateGlobal : dateTsPath,
-  forGlobal=importIsGlobal?dateGlobal:dateTsPath;
 
 const plugins= [
   resolve(),
@@ -15,38 +8,30 @@ const plugins= [
   sourcemaps()
 ];
 
-console.log('datePath='+dateTsPath);
-
-const date={
+const libExternal={
   entry: 'node_modules/date-fns/format/index.js',
-  dest: 'public/dateTs.js',
-  format: 'es',
-  moduleName:'date',
+  dest: 'public/date.js',
+  format: 'iife',
+  moduleName:'silly',
   plugins: plugins
 },
-node={
+nodeOrBrowserLibBundled={
   entry: 'src/main.js',
   dest: 'public/rollup.js',
   format: 'iife',
   sourceMap: true,
   plugins: plugins
 },
-browser={
+browserOnlyLibExternal={
   entry: 'src/main.js',
   dest: 'public/rollup.js',
   format: 'iife',
   sourceMap: true,
-  external: [forExternal],
-  globals: {
-    forGlobal: 'date',
-  },
+  external: ['date-fns/format'],
+  globals: {'date-fns/format': libExternal.moduleName},
   plugins: plugins
 };
 
-if(true){
-  date.format='iife';
-  date.dest='public/dateJs.js';
-}
-const bundle = browser;
+const bundle = browserOnlyLibExternal;
 console.log('Bundling to '+bundle.dest);
 export default bundle;

@@ -1,4 +1,4 @@
-var date = (function () {
+var silly = (function () {
 'use strict';
 
 /**

@@ -1,14 +1,10 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "noImplicitAny": true,
     "allowUnreachableCode": true,
-    "removeComments": false,
-    "preserveConstEnums": true,
     "alwaysStrict": true,
     "sourceMap": true,
-    "moduleResolution": "node",
-    "target": "es3",
-    "module": "umd"
+    "module": "es6",
+    "moduleResolution": "node"
   }
 }

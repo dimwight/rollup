@@ -2,36 +2,34 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 
-const external = true;
+const external = false;
 
 export default external ? {
-  // external: ['./src/myFormat.js'],
-  external: ['date-fns'],
-  globals: {
-    'date-fns': 'format',
-  },
   entry: 'src/main.js',
   dest: 'public/rollup.js',
   format: 'iife',
-  moduleName: 'mymodule',
   sourceMap: true,
+  // external: ['./src/myFormat.js'],
+  external: ['date-fns/format'],
+  globals: {
+    'date-fns/format': 'format',
+  },
   plugins: [
     resolve(),
-    // commonjs(),
+    commonjs(),
     sourcemaps()
   ]
 } : {
   entry: 'src/main.js',
   dest: 'public/rollup.js',
   format: 'iife',
-  moduleName: 'mymodule',
   sourceMap: true,
   plugins: [
     resolve(),
     commonjs({
-      // namedExports: {
-      //   'node_modules/date-fns/index.js': ['format']
-      // }
+      namedExports: {
+        'node_modules/date-fns/format': ['format']
+      }
     }),
     sourcemaps()
   ]

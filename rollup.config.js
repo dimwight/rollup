@@ -3,7 +3,14 @@ import commonjs from 'rollup-plugin-commonjs';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 import path from 'path';
 
-const datePath=path.resolve('public/dateTs.js')
+const plugins= [
+  resolve(),
+  commonjs(),
+  sourcemaps()
+];
+
+const datePath=path.resolve('public/dateTs.js');
+
 console.log('datePath='+datePath);
 
 const date={
@@ -11,22 +18,14 @@ const date={
   dest: 'public/dateTs.js',
   format: 'es',
   moduleName:'date',
-  plugins: [
-    resolve(),
-    commonjs(),
-    sourcemaps()
-  ]
+  plugins: plugins
 },
 internal={
   entry: 'src/main.js',
   dest: 'public/rollup.js',
   format: 'iife',
   sourceMap: true,
-  plugins: [
-    resolve(),
-    commonjs(),
-    sourcemaps()
-  ]
+  plugins: plugins
 },
 
 external={
@@ -34,15 +33,11 @@ external={
   dest: 'public/rollup.js',
   format: 'iife',
   sourceMap: true,
-  external: [datePath],
-  // globals: {
-  //   datePath: 'date',
-  // },
-  plugins: [
-    resolve(),
-    commonjs(),
-    sourcemaps()
-  ]
+  external: [datePath],//What makes it work.
+  globals: {
+    datePath: 'date', //Makes no odds either way
+  },
+  plugins: plugins
 };
 
 if(true){
@@ -50,5 +45,5 @@ if(true){
   date.dest='public/dateJs.js';
 }
 const bundle = external;
-console.log('Bundling to '+bundle.dest)
+console.log('Bundling to '+bundle.dest);
 export default bundle;

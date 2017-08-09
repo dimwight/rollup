@@ -3,13 +3,17 @@ import commonjs from 'rollup-plugin-commonjs';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 import path from 'path';
 
+const importIsGlobal=true;
+const dateTsPath=path.resolve('public/dateTs.js'),
+  dateGlobal='date-fns/format',
+  forExternal = importIsGlobal ? dateGlobal : dateTsPath,
+  forGlobal=importIsGlobal?dateGlobal:dateTsPath;
+
 const plugins= [
   resolve(),
   commonjs(),
   sourcemaps()
 ];
-
-const dateTsPath=path.resolve('public/dateTs.js');
 
 console.log('datePath='+dateTsPath);
 
@@ -27,15 +31,14 @@ node={
   sourceMap: true,
   plugins: plugins
 },
-
 browser={
   entry: 'src/main.js',
   dest: 'public/rollup.js',
   format: 'iife',
   sourceMap: true,
-  external: [dateTsPath],//What makes it work.
+  external: [forExternal],
   globals: {
-    datePath: 'date', //Makes no odds either way
+    forGlobal: 'date',
   },
   plugins: plugins
 };

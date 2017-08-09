@@ -7,7 +7,7 @@
 - Test for tree-shaking
 - And for splitting
 - And also for dual-format bundles!
-- But a puzzle:
+- But a puzzle: 
 ```
 datePath=C:\Users\Me\ts\rollup\public\dateTs.js
 Bundling to public/rollup.js

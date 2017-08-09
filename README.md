@@ -4,6 +4,6 @@
 - TS supported inc sourcemaps
 - Debug frames
 - Headless with Node
-- Refined target/module/format
 - Test for tree-shaking
-- And for splitting 
+- And for splitting
+- And also for dual-format bundles! 

@@ -2,35 +2,34 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 
-const plugins= [
-  resolve(),
-  commonjs(),
-  sourcemaps()
-];
+//Convenience function
+function assignAdding(target, add) {
+  return Object.assign(Object.assign(target), add);
+}
 
-const libExternal={
+//Used by all configs
+const base={
+  format: 'iife',
+  plugins: [
+    resolve(),
+    commonjs(),
+    sourcemaps()
+  ]
+},
+libExternal=assignAdding(base,{
   entry: 'node_modules/date-fns/format/index.js',
   dest: 'public/date.js',
-  format: 'iife',
-  moduleName:'silly',
-  plugins: plugins
-},
-nodeOrBrowserLibBundled={
+  moduleName: 'silly',
+}),
+nodeOrBrowserLibBundled=assignAdding(base,{
   entry: 'src/main.js',
   dest: 'public/rollup.js',
-  format: 'iife',
   sourceMap: true,
-  plugins: plugins
-},
-browserOnlyLibExternal={
-  entry: 'src/main.js',
-  dest: 'public/rollup.js',
-  format: 'iife',
-  sourceMap: true,
+}),
+browserOnlyLibExternal=assignAdding(nodeOrBrowserLibBundled,{
   external: ['date-fns/format'],
   globals: {'date-fns/format': libExternal.moduleName},
-  plugins: plugins
-};
+});
 
 const bundle = browserOnlyLibExternal;
 console.log('Bundling to '+bundle.dest);

@@ -3,7 +3,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 
 //Used by all configs
-const base={
+const common={
   format: 'iife',
   plugins: [
     resolve(),
@@ -11,21 +11,21 @@ const base={
     sourcemaps()
   ]
 },
-lib=Object.assign({},base,{
+extractLib=Object.assign({},common,{
   entry: 'node_modules/date-fns/format/index.js',
   dest: 'public/date.js',
   moduleName: 'forLibUnbundled',
 }),
-allBundled=Object.assign({},base,{
+includeLib=Object.assign({},common,{
   entry: 'src/main.js',
   dest: 'public/rollup.js',
   sourceMap: true,
 }),
-unbundledLib=Object.assign({},allBundled,{
+excludeLib=Object.assign({},includeLib,{
   external: ['date-fns/format'],
-  globals: {'date-fns/format': lib.moduleName},
+  globals: {'date-fns/format': extractLib.moduleName},
 });
 
-const bundle = unbundledLib;
+const bundle = excludeLib;
 console.log('Bundling to '+bundle.dest);
 export default bundle;

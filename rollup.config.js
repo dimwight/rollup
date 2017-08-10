@@ -2,7 +2,6 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 
-//Used by all configs
 const common={
   format: 'iife',
   plugins: [

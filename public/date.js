@@ -1,4 +1,4 @@
-var silly = (function () {
+var forLibUnbundled = (function () {
 'use strict';
 
 /**

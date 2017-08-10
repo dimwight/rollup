@@ -16,21 +16,21 @@ const base={
     sourcemaps()
   ]
 },
-libExternal=assignAdding(base,{
+lib=assignAdding(base,{
   entry: 'node_modules/date-fns/format/index.js',
   dest: 'public/date.js',
-  moduleName: 'silly',
+  moduleName: 'forLibUnbundled',
 }),
-nodeOrBrowserLibBundled=assignAdding(base,{
+allBundled=assignAdding(base,{
   entry: 'src/main.js',
   dest: 'public/rollup.js',
   sourceMap: true,
 }),
-browserOnlyLibExternal=assignAdding(nodeOrBrowserLibBundled,{
+libUnbundled=assignAdding(allBundled,{
   external: ['date-fns/format'],
-  globals: {'date-fns/format': libExternal.moduleName},
+  globals: {'date-fns/format': lib.moduleName},
 });
 
-const bundle = browserOnlyLibExternal;
+const bundle = lib;
 console.log('Bundling to '+bundle.dest);
 export default bundle;

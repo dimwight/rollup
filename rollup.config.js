@@ -22,9 +22,9 @@ includeLib=Object.assign({},common,{
 }),
 excludeLib=Object.assign({},includeLib,{
   external: ['date-fns/format'],
-  // globals: {'date-fns/format': extractLib.moduleName},
+  globals: {'date-fns/format': extractLib.moduleName},
 });
 
-const bundle = excludeLib;
+const bundle = excludeLib;// includeLib|extractLib|excludeLib
 console.log('Bundling to '+bundle.dest);
 export default bundle;

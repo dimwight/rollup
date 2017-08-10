@@ -1,6 +1,6 @@
 # rollup
 
-- Based on [https://github.com/rollup/rollup-starter-app]
+- Based on https://github.com/rollup/rollup-starter-app
 - TS support including sourcemaps
 - Debug frames in Webstorm
 - Headless with Node

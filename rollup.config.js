@@ -2,25 +2,25 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 
-const common={
+const common = {
   format: 'iife',
   plugins: [
     resolve(),
     commonjs(),
     sourcemaps()
   ]
-},
-extractLib=Object.assign({},common,{
-  entry: 'node_modules/date-fns/format/index.js',
-  dest: 'public/date.js',
-  moduleName: 'forLibUnbundled',
-}),
-includeLib=Object.assign({},common,{
+};
+const includeLib = Object.assign({}, common, {
   entry: 'src/main.js',
   dest: 'public/rollup.js',
   sourceMap: true,
-}),
-excludeLib=Object.assign({},includeLib,{
+});
+const extractLib = Object.assign({}, common, {
+  entry: 'node_modules/date-fns/format/index.js',
+  dest: 'public/date.js',
+  moduleName: 'forLibUnbundled',
+});
+const excludeLib = Object.assign({}, includeLib, {
   external: ['date-fns/format'],
   globals: {'date-fns/format': extractLib.moduleName},
 });

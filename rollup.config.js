@@ -17,8 +17,8 @@ const includeLib = Object.assign({}, common, {
 });
 const extractLib = Object.assign({}, common, {
   entry: 'node_modules/date-fns/format/index.js',
-  dest: 'public/date.js',
-  moduleName: 'forLibUnbundled',
+  dest: 'public/dateFormat.js',
+  moduleName: 'dateFormat',
 });
 const excludeLib = Object.assign({}, includeLib, {
   external: ['date-fns/format'],

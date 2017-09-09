@@ -1,6 +1,5 @@
-import date from 'date-fns/format';
+import dateFormat from 'date-fns/format';
 export default function (time:Date,style:string){
-  return date(time,style,null);
+  return dateFormat(time,style,null);
   return 'late afternoon';
-
 }
